@@ -35,7 +35,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Header */
     .header {
       background: linear-gradient(165deg, var(--green) 0%, var(--green-dark) 100%);
       color: white;
@@ -74,7 +73,6 @@
       font-weight: 500;
     }
 
-    /* Countdown */
     .countdown {
       display: flex;
       justify-content: center;
@@ -107,7 +105,6 @@
       margin-top: 2px;
     }
 
-    /* Main content */
     .container {
       max-width: 480px;
       margin: 0 auto;
@@ -143,7 +140,6 @@
     }
     .card h2 .icon { font-size: 1.15rem; }
 
-    /* Event meta */
     .event-meta {
       display: grid;
       gap: 11px;
@@ -169,7 +165,6 @@
     }
     .event-meta a:hover { text-decoration: underline; }
 
-    /* Players */
     .players-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -186,7 +181,6 @@
       color: var(--green-dark);
     }
 
-    /* Rules / notes text */
     .body-text {
       font-size: 0.94rem;
       color: var(--text);
@@ -197,7 +191,6 @@
     .body-text strong { color: var(--green-dark); }
     .muted { color: var(--muted); font-size: 0.9rem; }
 
-    /* Lists */
     .info-list {
       padding-left: 18px;
       font-size: 0.93rem;
@@ -207,7 +200,6 @@
     .info-list li { margin-bottom: 6px; }
     .info-list li:last-child { margin-bottom: 0; }
 
-    /* Images */
     .photo {
       width: 100%;
       border-radius: 14px;
@@ -221,7 +213,6 @@
       margin: 16px 0 8px;
     }
 
-    /* Facts */
     .fact-card {
       background: var(--cream);
       border-radius: 14px;
@@ -240,7 +231,6 @@
       line-height: 1.45;
     }
 
-    /* Bottom nav */
     .bottom-nav {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -282,7 +272,6 @@
       transform: scale(0.96);
     }
 
-    /* Toast */
     .toast {
       position: fixed;
       bottom: 100px;
@@ -322,14 +311,15 @@
   </div>
 
   <div class="container">
-    <!-- GOLF -->
     <section id="section-home" class="section active">
       <div class="card">
         <h2><span class="icon">📍</span> Event Details</h2>
-        <div class="event-meta">
+        <div class="body-text">
+          <p>The Mac Cup 2026 has concluded. RJ, Mac, Fitz, Cresta are the champions. Mac shot an 81.</p>
+        </div>
+        <div class="event-meta" style="margin-top:14px;">
           <div><span class="label">When</span><span>Friday, August 28, 2026 · 2:30 PM</span></div>
           <div><span class="label">Where</span><span>Saratoga Spa Golf Course<br>Championship Course<br><a href="https://www.saratogaspagolf.com/" target="_blank" rel="noopener">saratogaspagolf.com →</a></span></div>
-          <div><span class="label">Format</span><span>2 foursomes · Points scoring</span></div>
           <div><span class="label">Cost</span><span>Golf $103 per player</span></div>
         </div>
       </div>
@@ -338,21 +328,8 @@
         <h2><span class="icon">👥</span> The Field (8)</h2>
         <div class="players-grid" id="players-grid"></div>
       </div>
-
-      <div class="card">
-        <h2><span class="icon">🏆</span> Golf Contest Rules</h2>
-        <div class="body-text">
-          <p><strong>Format:</strong> Two foursomes. Each player plays their own ball.</p>
-          <p><strong>Scoring:</strong> Points awarded for eagle, birdie, par, and bogey.</p>
-          <p>You can also score points with <strong>greenies</strong> (closest to the pin on all par 3’s, getting par or better) and <strong>sandies</strong> (up-and-down from a bunker, par or better).</p>
-          <p style="margin-top:12px;"><strong>Teams:</strong></p>
-          <p style="margin-bottom:6px;"><strong>Team 1:</strong> RJ, Mac, Fitz, Cresta</p>
-          <p><strong>Team 2:</strong> OB, Keith, Will, Nate</p>
-        </div>
-      </div>
     </section>
 
-    <!-- AIRBNB -->
     <section id="section-airbnb" class="section">
       <div class="card">
         <h2><span class="icon">🏡</span> The House</h2>
@@ -377,7 +354,6 @@
       </div>
     </section>
 
-    <!-- TRACK -->
     <section id="section-track" class="section">
       <div class="card">
         <h2><span class="icon">🐎</span> Travers Stakes</h2>
@@ -406,7 +382,6 @@
       </div>
     </section>
 
-    <!-- FACTS -->
     <section id="section-facts" class="section">
       <div class="card">
         <h2><span class="icon">📖</span> Random Facts</h2>
@@ -416,7 +391,6 @@
     </section>
   </div>
 
-  <!-- Bottom Nav -->
   <nav class="bottom-nav">
     <button class="nav-item active" data-section="home" onclick="showSection('home')">
       <span class="nav-icon">⛳</span>
