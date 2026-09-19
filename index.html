@@ -6,24 +6,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#195238" />
-  <title>The Mac Cup</title>
+  <title>Mac's Groomsman</title>
   <style>
     :root {
       --green: #195238;
       --green-dark: #123a28;
-      --green-light: #2a6b4a;
       --cream: #FEF7E9;
       --cream-dark: #f5ebd5;
-      --cream-deeper: #efe6d0;
-      --burgundy: #821E30;
       --text: #1a1a1a;
       --muted: #5a5a5a;
       --card: #ffffff;
       --shadow: 0 4px 24px rgba(25, 82, 56, 0.10);
-      --shadow-hover: 0 8px 28px rgba(25, 82, 56, 0.14);
       --radius: 18px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -34,7 +29,6 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-
     .header {
       background: linear-gradient(165deg, var(--green) 0%, var(--green-dark) 100%);
       color: white;
@@ -52,17 +46,17 @@
       border-radius: 50% 50% 0 0 / 100% 100% 0 0;
     }
     .logo {
-      width: 168px; height: 168px;
+      width: 132px; height: 132px;
       border-radius: 50%;
       background: var(--cream);
-      padding: 10px;
-      margin: 0 auto 16px;
+      padding: 8px;
+      margin: 0 auto 14px;
       box-shadow: 0 10px 32px rgba(0,0,0,0.30);
       display: flex; align-items: center; justify-content: center;
     }
     .logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
     .header h1 {
-      font-size: 1.85rem;
+      font-size: 1.7rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 4px;
@@ -72,7 +66,6 @@
       opacity: 0.9;
       font-weight: 500;
     }
-
     .countdown {
       display: flex;
       justify-content: center;
@@ -104,20 +97,17 @@
       opacity: 0.85;
       margin-top: 2px;
     }
-
     .container {
       max-width: 480px;
       margin: 0 auto;
       padding: 4px 16px 28px;
     }
-
     .section { display: none; }
     .section.active { display: block; animation: fadeIn 0.25s ease; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .card {
       background: var(--card);
       border-radius: var(--radius);
@@ -125,21 +115,15 @@
       padding: 20px;
       margin-bottom: 14px;
       border: 1px solid rgba(25, 82, 56, 0.07);
-      transition: box-shadow 0.2s ease;
     }
     .card h2 {
       font-size: 1.02rem;
       font-weight: 700;
       color: var(--green);
       margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
       padding-bottom: 10px;
       border-bottom: 2px solid var(--cream-dark);
     }
-    .card h2 .icon { font-size: 1.15rem; }
-
     .event-meta {
       display: grid;
       gap: 11px;
@@ -152,7 +136,7 @@
     }
     .event-meta .label {
       color: var(--muted);
-      min-width: 68px;
+      min-width: 78px;
       font-size: 0.82rem;
       font-weight: 500;
       padding-top: 1px;
@@ -163,11 +147,28 @@
       text-decoration: none;
       font-size: 0.88rem;
     }
-    .event-meta a:hover { text-decoration: underline; }
-
+    .body-text {
+      font-size: 0.94rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .body-text p { margin-bottom: 11px; }
+    .info-list {
+      padding-left: 18px;
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+    .info-list li { margin-bottom: 6px; }
+    .photo {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      display: block;
+      margin-top: 12px;
+    }
     .players-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
     .player-chip {
@@ -180,57 +181,6 @@
       text-align: center;
       color: var(--green-dark);
     }
-
-    .body-text {
-      font-size: 0.94rem;
-      color: var(--text);
-      line-height: 1.55;
-    }
-    .body-text p { margin-bottom: 11px; }
-    .body-text p:last-child { margin-bottom: 0; }
-    .body-text strong { color: var(--green-dark); }
-    .muted { color: var(--muted); font-size: 0.9rem; }
-
-    .info-list {
-      padding-left: 18px;
-      font-size: 0.93rem;
-      line-height: 1.65;
-      color: var(--text);
-    }
-    .info-list li { margin-bottom: 6px; }
-    .info-list li:last-child { margin-bottom: 0; }
-
-    .photo {
-      width: 100%;
-      border-radius: 14px;
-      object-fit: cover;
-      display: block;
-    }
-    .photo-label {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--green);
-      margin: 16px 0 8px;
-    }
-
-    .fact-card {
-      background: var(--cream);
-      border-radius: 14px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--green);
-    }
-    .fact-num {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
-    }
-    .fact-text {
-      font-size: 0.94rem;
-      line-height: 1.45;
-    }
-
     .bottom-nav {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -254,54 +204,25 @@
       padding: 8px 4px;
       border-radius: 12px;
       color: var(--muted);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
       -webkit-tap-highlight-color: transparent;
     }
-    .nav-item .nav-icon {
-      font-size: 1.35rem;
-      line-height: 1;
-    }
+    .nav-item .nav-icon { font-size: 1.3rem; line-height: 1; }
     .nav-item.active {
       color: var(--green);
       background: rgba(25, 82, 56, 0.08);
-    }
-    .nav-item:active {
-      transform: scale(0.96);
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%) translateY(12px);
-      background: var(--green-dark);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 24px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      opacity: 0;
-      transition: all 0.25s ease;
-      z-index: 200;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="logo">
-      <img src="logo.png" alt="The Mac Cup Logo" />
+      <img src="logo.png" alt="Mac's Groomsman" />
     </div>
-    <h1>The Mac Cup</h1>
-    <div class="subtitle">August 28, 2026 · Saratoga Spa</div>
+    <h1>Mac's Groomsman</h1>
+    <div class="subtitle">October 2, 2026 · Lake George</div>
     <div class="countdown" id="countdown">
       <div class="cd-box"><span class="num" id="cd-days">–</span><span class="label">Days</span></div>
       <div class="cd-box"><span class="num" id="cd-hours">–</span><span class="label">Hrs</span></div>
@@ -311,132 +232,84 @@
   </div>
 
   <div class="container">
-    <section id="section-home" class="section active">
+    <section id="section-rehearsal" class="section">
       <div class="card">
-        <h2><span class="icon">📍</span> Event Details</h2>
-        <div class="body-text">
-          <p>The Mac Cup 2026 has concluded. RJ, Mac, Fitz, Cresta are the champions. Mac shot an 81.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2><span class="icon">👥</span> The Field (8)</h2>
-        <div class="players-grid" id="players-grid"></div>
-      </div>
-    </section>
-
-    <section id="section-airbnb" class="section">
-      <div class="card">
-        <h2><span class="icon">🏡</span> The House</h2>
-        <p class="body-text" style="margin-bottom:14px;">
-          Total house cost <strong>$3,000</strong> → <strong>$333 per person</strong> (split 9 ways).
-        </p>
-        <div class="event-meta" style="margin-bottom:14px;">
-          <div><span class="label">Address</span><span>43 Benedict Street<br>Saratoga Springs, NY</span></div>
-          <div><span class="label">Cost</span><span>$333 each</span></div>
-          <div><span class="label">Link</span><span><a href="https://www.airbnb.com/rooms/1190083506144553329?unique_share_id=501f29c2-9037-4d67-9ce3-e792d070df10&viralityEntryPoint=1&s=76" target="_blank" rel="noopener">Open Airbnb listing →</a></span></div>
-        </div>
-        <img class="photo" src="images/house.jpg" alt="Group house" style="max-height:220px;" onerror="this.style.display='none'">
-      </div>
-      <div class="card">
-        <h2><span class="icon">📌</span> Quick Notes</h2>
-        <ul class="info-list">
-          <li>I am going up Thursday, but we can get there either Thursday night or Friday morning. Golf isn’t until 2:30 on Friday.</li>
-          <li>Less than a mile from downtown and Caroline Street.</li>
-          <li>About 5 minutes from Saratoga Spa Golf Course, about 10 minutes from the track.</li>
-          <li>Heading downtown for bars and dinner on Friday and after the track.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="section-track" class="section">
-      <div class="card">
-        <h2><span class="icon">🐎</span> Travers Stakes</h2>
-        <p class="body-text" style="margin-bottom:14px;">
-          We’re going to the <strong>Travers Stakes</strong> at Saratoga Race Course — the Midsummer Derby.
-        </p>
+        <h2>Rehearsal Dinner</h2>
         <div class="event-meta">
-          <div><span class="label">Tickets</span><span>$48 per person (already purchased)</span></div>
-          <div><span class="label">What to bring</span><span>Your own booze + coolers are allowed. Plan accordingly.</span></div>
+          <div><span class="label">When</span><span>Thursday, October 1, 2026</span></div>
+          <div><span class="label">Where</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
+          <div><span class="label">Link</span><span><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></span></div>
         </div>
-
-        <p class="photo-label">Our tables</p>
-        <img class="photo" src="images/track-tables.jpg" alt="Our picnic tables at the track" style="max-height:320px; margin-bottom:12px;" onerror="this.style.display='none'">
-
-        <img class="photo" src="images/saratoga-track.jpg" alt="Saratoga Race Course aerial" style="max-height:200px; margin-bottom:10px;" onerror="this.style.display='none'">
-        <img class="photo" src="images/travers.jpg" alt="Travers Stakes racing" style="max-height:180px;" onerror="this.style.display='none'">
-      </div>
-      <div class="card">
-        <h2><span class="icon">📍</span> Track Info</h2>
-        <ul class="info-list">
-          <li>Saratoga Race Course, Saratoga Springs, NY</li>
-          <li>Coolers & outside alcohol permitted (confirm current rules on the day)</li>
-          <li>Arrive early — Travers day is one of the biggest of the year</li>
-          <li>Dress code is smart casual / race-day fun</li>
-        </ul>
+        <p class="body-text" style="margin-top:14px;">Night before the wedding. More details (time, dress, who’s going) can get added here.</p>
+        <img class="photo" src="images/erlo-castle.jpg" alt="The Inn at Erlowest" style="max-height:240px;" onerror="this.style.display='none'">
       </div>
     </section>
 
-    <section id="section-facts" class="section">
+    <section id="section-golf" class="section">
       <div class="card">
-        <h2><span class="icon">📖</span> Random Facts</h2>
-        <p class="muted" style="margin-bottom:14px;">A mix of Saratoga, Travers, and Spa Golf Course.</p>
-        <div id="facts-list" style="display:flex; flex-direction:column; gap:10px;"></div>
+        <h2>Golf</h2>
+        <p class="body-text">The Mac Cup 2026 is in the books. RJ, Mac, Fitz, and Cresta won. Mac shot an 81.</p>
+        <div class="players-grid" style="margin-top:14px;">
+          <div class="player-chip">Mac</div>
+          <div class="player-chip">RJ</div>
+          <div class="player-chip">Keith</div>
+          <div class="player-chip">OB</div>
+          <div class="player-chip">Fitz</div>
+          <div class="player-chip">Will</div>
+          <div class="player-chip">Nate</div>
+          <div class="player-chip">Cresta</div>
+        </div>
+        <p class="body-text" style="margin-top:14px; color:var(--muted);">If we’re playing a round around the wedding weekend, drop the course and tee time and I’ll add it here.</p>
+        <img class="photo" src="images/spa-golf.jpg" alt="Golf" style="max-height:200px;" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="section-wedding" class="section active">
+      <div class="card">
+        <h2>Wedding Day</h2>
+        <div class="event-meta">
+          <div><span class="label">When</span><span>Friday, October 2, 2026</span></div>
+          <div><span class="label">Where</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
+          <div><span class="label">Link</span><span><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></span></div>
+        </div>
+        <p class="body-text" style="margin-top:14px;">1898 stone castle on the west side of Lake George. Ceremony and reception are here.</p>
+        <img class="photo" src="images/erlo-sunset.jpg" alt="Erlowest on Lake George" style="max-height:220px;" onerror="this.style.display='none'">
+        <img class="photo" src="images/erlo-ceremony.jpg" alt="Lakeside ceremony setup" style="max-height:220px;" onerror="this.style.display='none'">
+      </div>
+      <div class="card">
+        <h2>Notes</h2>
+        <ul class="info-list">
+          <li>Rehearsal dinner is the night before, October 1.</li>
+          <li>Venue address: 3178 Lake Shore Drive, Lake George, NY 12845.</li>
+          <li>Send times, suits, getting-ready spot, or anything else and I’ll put it on this page.</li>
+        </ul>
       </div>
     </section>
   </div>
 
   <nav class="bottom-nav">
-    <button class="nav-item active" data-section="home" onclick="showSection('home')">
+    <button class="nav-item" data-section="rehearsal" onclick="showSection('rehearsal')">
+      <span class="nav-icon">🍽️</span>
+      <span>Rehearsal Dinner</span>
+    </button>
+    <button class="nav-item" data-section="golf" onclick="showSection('golf')">
       <span class="nav-icon">⛳</span>
       <span>Golf</span>
     </button>
-    <button class="nav-item" data-section="airbnb" onclick="showSection('airbnb')">
-      <span class="nav-icon">🏡</span>
-      <span>Airbnb</span>
-    </button>
-    <button class="nav-item" data-section="track" onclick="showSection('track')">
-      <span class="nav-icon">🐎</span>
-      <span>Track</span>
-    </button>
-    <button class="nav-item" data-section="facts" onclick="showSection('facts')">
-      <span class="nav-icon">📖</span>
-      <span>Facts</span>
+    <button class="nav-item active" data-section="wedding" onclick="showSection('wedding')">
+      <span class="nav-icon">💍</span>
+      <span>Wedding Day</span>
     </button>
   </nav>
 
-  <div class="toast" id="toast"></div>
-
   <script>
-    const PLAYERS = ["Mac", "RJ", "Keith", "OB", "Fitz", "Will", "Nate", "Cresta"];
-    const EVENT_DATE = new Date("2026-08-28T14:30:00-04:00");
-
-    const FACTS = [
-      "The Travers Stakes is the oldest major stakes race for 3-year-olds in the United States — first run in 1864.",
-      "Saratoga Race Course is known as the “Graveyard of Champions.” Triple Crown winner Gallant Fox was beaten at 100-1 by Jim Dandy in the 1930 Travers.",
-      "Man o’ War suffered his only career loss at Saratoga (to Upset in 1919). He came back and won the 1920 Travers.",
-      "Only one Triple Crown winner has also won the Travers: Whirlaway in 1941.",
-      "Saratoga Spa Golf Course sits inside a National Historic Landmark park. The championship layout was built in the 1930s and redesigned by William Mitchell in the 1950s.",
-      "Arnold Palmer and Gary Player both played commemorative rounds after the major redesign of the Spa course.",
-      "The course is framed by tall pines and consistently earns 4 stars from Golf Digest’s Best Places to Play.",
-      "The Travers is nicknamed the “Midsummer Derby” and is one of the most prestigious races of the summer.",
-      "Saratoga Springs became America’s first spa town because of its natural mineral springs. FDR helped fund the modern Spa State Park in the 1930s.",
-      "swagmac has never had a salad in his 31 years of living."
-    ];
-
-    function toast(msg) {
-      const el = document.getElementById("toast");
-      el.textContent = msg;
-      el.classList.add("show");
-      setTimeout(() => el.classList.remove("show"), 1800);
-    }
+    const EVENT_DATE = new Date("2026-10-02T16:00:00-04:00");
 
     function showSection(name) {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
       document.getElementById("section-" + name).classList.add("active");
-      document.querySelector(`.nav-item[data-section="${name}"]`).classList.add("active");
-      if (name === "facts") renderFacts();
+      document.querySelector('.nav-item[data-section="' + name + '"]').classList.add("active");
     }
 
     function updateCountdown() {
@@ -459,23 +332,6 @@
       document.getElementById("cd-secs").textContent = secs;
     }
 
-    function renderPlayers() {
-      document.getElementById("players-grid").innerHTML = PLAYERS.map(p => `<div class="player-chip">${p}</div>`).join("");
-    }
-
-    function renderFacts() {
-      const list = document.getElementById("facts-list");
-      const shuffled = [...FACTS].sort(() => Math.random() - 0.5);
-      list.innerHTML = shuffled.map((f, i) => `
-        <div class="fact-card">
-          <div class="fact-num">FACT ${i+1}</div>
-          <div class="fact-text">${f}</div>
-        </div>
-      `).join("");
-    }
-
-    renderPlayers();
-    renderFacts();
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
