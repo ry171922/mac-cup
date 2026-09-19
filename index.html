@@ -166,6 +166,16 @@
       display: block;
       margin-top: 12px;
     }
+    .sched { display: grid; gap: 14px; }
+    .sched-row { display: flex; gap: 12px; align-items: flex-start; }
+    .sched-time {
+      min-width: 92px;
+      font-weight: 700;
+      color: var(--green);
+      font-size: 0.88rem;
+      padding-top: 1px;
+    }
+    .sched-what { font-size: 0.94rem; line-height: 1.45; }
     .players-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -234,55 +244,71 @@
   <div class="container">
     <section id="section-rehearsal" class="section">
       <div class="card">
-        <h2>Rehearsal Dinner</h2>
-        <div class="event-meta">
-          <div><span class="label">When</span><span>Thursday, October 1, 2026</span></div>
-          <div><span class="label">Where</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
-          <div><span class="label">Link</span><span><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></span></div>
+        <h2>Thursday, October 1</h2>
+        <div class="sched">
+          <div class="sched-row">
+            <div class="sched-time">4:00 PM</div>
+            <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George</div>
+          </div>
+          <div class="sched-row">
+            <div class="sched-time">5:00 PM</div>
+            <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
+          </div>
+          <div class="sched-row">
+            <div class="sched-time">7:30 PM</div>
+            <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
+          </div>
         </div>
-        <p class="body-text" style="margin-top:14px;">Night before the wedding. More details (time, dress, who’s going) can get added here.</p>
-        <img class="photo" src="images/erlo-castle.jpg" alt="The Inn at Erlowest" style="max-height:240px;" onerror="this.style.display='none'">
       </div>
     </section>
 
     <section id="section-golf" class="section">
       <div class="card">
         <h2>Golf</h2>
-        <p class="body-text">The Mac Cup 2026 is in the books. RJ, Mac, Fitz, and Cresta won. Mac shot an 81.</p>
-        <div class="players-grid" style="margin-top:14px;">
+        <div class="event-meta">
+          <div><span class="label">When</span><span>Friday, October 2 · 7:45 AM</span></div>
+          <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845</span></div>
+          <div><span class="label">Format</span><span>3 foursomes · Bramble<br>Teams TBD</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>The Field (11)</h2>
+        <div class="players-grid">
           <div class="player-chip">Mac</div>
           <div class="player-chip">RJ</div>
+          <div class="player-chip">Joe</div>
+          <div class="player-chip">Kyle</div>
+          <div class="player-chip">Ryan</div>
           <div class="player-chip">Keith</div>
-          <div class="player-chip">OB</div>
-          <div class="player-chip">Fitz</div>
-          <div class="player-chip">Will</div>
-          <div class="player-chip">Nate</div>
+          <div class="player-chip">Dfitz</div>
           <div class="player-chip">Cresta</div>
+          <div class="player-chip">Cree</div>
+          <div class="player-chip">Steve</div>
+          <div class="player-chip">OB</div>
         </div>
-        <p class="body-text" style="margin-top:14px; color:var(--muted);">If we’re playing a round around the wedding weekend, drop the course and tee time and I’ll add it here.</p>
-        <img class="photo" src="images/spa-golf.jpg" alt="Golf" style="max-height:200px;" onerror="this.style.display='none'">
       </div>
     </section>
 
     <section id="section-wedding" class="section active">
       <div class="card">
-        <h2>Wedding Day</h2>
-        <div class="event-meta">
-          <div><span class="label">When</span><span>Friday, October 2, 2026</span></div>
-          <div><span class="label">Where</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
-          <div><span class="label">Link</span><span><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></span></div>
+        <h2>Friday, October 2</h2>
+        <div class="event-meta" style="margin-bottom:16px;">
+          <div><span class="label">Venue</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
         </div>
-        <p class="body-text" style="margin-top:14px;">1898 stone castle on the west side of Lake George. Ceremony and reception are here.</p>
-        <img class="photo" src="images/erlo-sunset.jpg" alt="Erlowest on Lake George" style="max-height:220px;" onerror="this.style.display='none'">
-        <img class="photo" src="images/erlo-ceremony.jpg" alt="Lakeside ceremony setup" style="max-height:220px;" onerror="this.style.display='none'">
-      </div>
-      <div class="card">
-        <h2>Notes</h2>
-        <ul class="info-list">
-          <li>Rehearsal dinner is the night before, October 1.</li>
-          <li>Venue address: 3178 Lake Shore Drive, Lake George, NY 12845.</li>
-          <li>Send times, suits, getting-ready spot, or anything else and I’ll put it on this page.</li>
-        </ul>
+        <div class="sched">
+          <div class="sched-row">
+            <div class="sched-time">7:30–10:30 AM</div>
+            <div class="sched-what">Golf at Top of the World</div>
+          </div>
+          <div class="sched-row">
+            <div class="sched-time">11:45 AM</div>
+            <div class="sched-what">Meet in my room for getting ready and pics</div>
+          </div>
+          <div class="sched-row">
+            <div class="sched-time">12:00–4:00 PM</div>
+            <div class="sched-what">Hang out until the wedding</div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
