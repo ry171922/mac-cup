@@ -5,284 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="theme-color" content="#195238" />
+  <meta name="theme-color" content="#1B3A2A" />
   <title>Mac's Groomsmen</title>
   <style>
     :root {
-      --green: #195238;
-      --green-dark: #123a28;
-      --cream: #FEF7E9;
-      --cream-dark: #f5ebd5;
-      --text: #1a1a1a;
-      --muted: #5a5a5a;
-      --card: #ffffff;
-      --shadow: 0 4px 24px rgba(25, 82, 56, 0.10);
-      --radius: 18px;
+      --green: #1B3A2A;
+      --maroon: #6B1E2B;
+      --cream: #F4EFE6;
+      --paper: #FBFAF6;
+      --text: #1A1714;
+      --line: rgba(27, 58, 42, 0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
       background: var(--cream);
       color: var(--text);
       min-height: 100dvh;
-      padding-bottom: 88px;
+      padding-bottom: 92px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-    .header {
-      background: linear-gradient(165deg, var(--green) 0%, var(--green-dark) 100%);
-      color: white;
-      padding: 24px 16px 32px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .hero { position: relative; min-height: 280px; color: #fff; overflow: hidden; }
+    .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .hero .veil {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(27,58,42,0.55) 0%, rgba(27,58,42,0.72) 48%, #1B3A2A 100%);
     }
-    .header::after {
-      content: "";
-      position: absolute;
-      bottom: -24px; left: 0; right: 0;
-      height: 48px;
-      background: var(--cream);
-      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    .hero-inner { position: relative; z-index: 1; padding: 36px 20px 28px; text-align: center; }
+    .eyebrow {
+      display: inline-block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: #F4EFE6; border: 1px solid rgba(244,239,230,0.35); padding: 5px 10px; margin-bottom: 12px;
     }
-    .hero-photo {
-      width: 100%;
-      max-width: 360px;
-      height: 170px;
-      margin: 0 auto 16px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 32px rgba(0,0,0,0.30);
-      position: relative;
-      z-index: 1;
-    }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .cd-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 18px;
-      position: relative;
-      z-index: 1;
-      flex-wrap: wrap;
-    }
-    .cd-group { min-width: 150px; }
-    .cd-title {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.85;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .header h1 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 4px;
-    }
-    .header .subtitle {
-      font-size: 0.92rem;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 0;
-      position: relative;
-      z-index: 1;
-    }
-    .cd-box {
-      background: rgba(254, 247, 233, 0.14);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 14px;
-      padding: 11px 13px;
-      min-width: 66px;
-      text-align: center;
-    }
-    .cd-box .num {
-      font-size: 1.55rem;
-      font-weight: 800;
-      display: block;
-      line-height: 1.1;
-    }
-    .cd-box .label {
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      opacity: 0.85;
-      margin-top: 2px;
-    }
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 4px 16px 28px;
-    }
+    .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.05rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 6px; }
+    .hero .subtitle { font-size: 0.92rem; opacity: 0.92; margin-bottom: 18px; }
+    .cd-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 420px; margin: 0 auto; }
+    .cd-group { background: rgba(107, 30, 43, 0.55); border: 1px solid rgba(244,239,230,0.18); padding: 10px 8px 12px; }
+    .cd-title { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; opacity: 0.9; }
+    .countdown { display: flex; justify-content: center; gap: 8px; }
+    .cd-box .num { display: block; font-family: Georgia, serif; font-size: 1.55rem; line-height: 1; }
+    .cd-box .label { display: block; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; margin-top: 3px; }
+    .container { max-width: 480px; margin: -6px auto 0; padding: 0 14px 24px; }
     .section { display: none; }
-    .section.active { display: block; animation: fadeIn 0.25s ease; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      margin-bottom: 14px;
-      border: 1px solid rgba(25, 82, 56, 0.07);
-    }
-    .card h2 {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--cream-dark);
-    }
-    .event-meta {
-      display: grid;
-      gap: 11px;
-      font-size: 0.95rem;
-    }
-    .event-meta > div {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .event-meta .label {
-      color: var(--muted);
-      min-width: 78px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding-top: 1px;
-    }
-    .event-meta a {
-      color: var(--green);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .body-text {
-      font-size: 0.94rem;
-      color: var(--text);
-      line-height: 1.55;
-    }
-    .sched { display: grid; gap: 14px; }
-    .sched-row { display: flex; gap: 12px; align-items: flex-start; }
-    .sched-time {
-      min-width: 92px;
-      font-weight: 700;
-      color: var(--green);
-      font-size: 0.88rem;
-      padding-top: 1px;
-    }
-    .sched-what { font-size: 0.94rem; line-height: 1.45; }
-    .sched-what a {
-      color: var(--green);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .players-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .player-chip {
-      background: var(--cream);
-      border: 1.5px solid rgba(25, 82, 56, 0.16);
-      border-radius: 12px;
-      padding: 11px 8px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      text-align: center;
-      color: var(--green-dark);
-    }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(25, 82, 56, 0.08);
-      display: flex;
-      justify-content: space-around;
-      padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
-      z-index: 100;
-    }
-    .nav-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      background: none;
-      border: none;
-      padding: 8px 4px;
-      border-radius: 12px;
-      color: var(--muted);
-      font-size: 0.68rem;
-      font-weight: 600;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .nav-item .nav-icon { font-size: 1.3rem; line-height: 1; }
-    .nav-item.active {
-      color: var(--green);
-      background: rgba(25, 82, 56, 0.08);
-    }
+    .section.active { display: block; }
+    .card { background: var(--paper); border: 1px solid var(--line); margin-bottom: 12px; overflow: hidden; }
+    .card h2 { font-family: Georgia, serif; font-size: 1.05rem; font-weight: 600; color: var(--green); padding: 14px 16px 12px; border-bottom: 3px solid var(--maroon); }
+    .card-body { padding: 14px 16px 16px; }
+    .body-text { font-size: 0.95rem; }
+    .event-meta { display: grid; gap: 12px; font-size: 0.94rem; }
+    .event-meta > div { display: flex; gap: 12px; align-items: flex-start; }
+    .event-meta .label { min-width: 68px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--maroon); font-weight: 700; padding-top: 3px; }
+    a { color: var(--maroon); font-weight: 600; text-decoration: none; font-size: 0.88rem; }
+    .sched { display: grid; }
+    .sched-row { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .sched-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .sched-row:first-child { padding-top: 0; }
+    .sched-time { min-width: 88px; font-size: 0.78rem; font-weight: 700; color: #fff; background: var(--green); padding: 6px 8px; text-align: center; align-self: flex-start; line-height: 1.25; }
+    .sched-what { font-size: 0.93rem; padding-top: 4px; }
+    .players-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .player-chip { background: var(--green); color: #F4EFE6; text-align: center; padding: 11px 8px; font-weight: 600; font-size: 0.88rem; }
+    .player-chip:nth-child(3n) { background: var(--maroon); }
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--green); display: flex; z-index: 100; padding: 0 0 env(safe-area-inset-bottom); }
+    .nav-item { flex: 1; background: none; border: none; color: rgba(244,239,230,0.62); padding: 12px 4px 10px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; }
+    .nav-item .nav-icon { display: block; font-size: 1.15rem; margin-bottom: 3px; }
+    .nav-item.active { color: #fff; background: var(--maroon); }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="hero-photo">
-      <img src="https://www.erlowest.com/wp-content/uploads/2023/08/150840-erlowest-423-edit-2-scaled.jpg" alt="The Inn at Erlowest" />
-    </div>
-    <h1>Mac's Groomsmen</h1>
-    <div class="subtitle">October 1–2, 2026 · Lake George</div>
-    <div class="cd-wrap">
-      <div class="cd-group">
-        <div class="cd-title">Rehearsal · Oct 1</div>
-        <div class="countdown">
-          <div class="cd-box"><span class="num" id="reh-days">–</span><span class="label">Days</span></div>
-          <div class="cd-box"><span class="num" id="reh-hours">–</span><span class="label">Hrs</span></div>
+  <header class="hero">
+    <img class="bg" src="https://www.erlowest.com/wp-content/uploads/2023/08/150840-erlowest-423-edit-2-scaled.jpg" alt="The Inn at Erlowest" />
+    <div class="veil"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Lake George</div>
+      <h1>Mac's Groomsmen</h1>
+      <div class="subtitle">October 1–2, 2026</div>
+      <div class="cd-wrap">
+        <div class="cd-group">
+          <div class="cd-title">Rehearsal · Oct 1</div>
+          <div class="countdown">
+            <div class="cd-box"><span class="num" id="reh-days">–</span><span class="label">Days</span></div>
+            <div class="cd-box"><span class="num" id="reh-hours">–</span><span class="label">Hrs</span></div>
+          </div>
+        </div>
+        <div class="cd-group">
+          <div class="cd-title">Wedding · Oct 2</div>
+          <div class="countdown">
+            <div class="cd-box"><span class="num" id="wed-days">–</span><span class="label">Days</span></div>
+            <div class="cd-box"><span class="num" id="wed-hours">–</span><span class="label">Hrs</span></div>
+          </div>
         </div>
       </div>
-      <div class="cd-group">
-        <div class="cd-title">Wedding · Oct 2</div>
-        <div class="countdown">
-          <div class="cd-box"><span class="num" id="wed-days">–</span><span class="label">Days</span></div>
-          <div class="cd-box"><span class="num" id="wed-hours">–</span><span class="label">Hrs</span></div>
-        </div>
-      </div>
     </div>
-  </div>
+  </header>
 
   <div class="container">
     <section id="section-rehearsal" class="section">
       <div class="card">
         <h2>Quick Notes</h2>
-        <p class="body-text">Everyone meet at the front of The Erlowest around 3:45.</p>
+        <div class="card-body"><p class="body-text">Everyone meet at the front of The Erlowest around 3:45.</p></div>
       </div>
       <div class="card">
         <h2>Thursday, October 1</h2>
-        <div class="sched">
-          <div class="sched-row">
-            <div class="sched-time">4:00 PM</div>
-            <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George<br><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></div>
-          </div>
-          <div class="sched-row">
-            <div class="sched-time">5:00 PM</div>
-            <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
-          </div>
-          <div class="sched-row">
-            <div class="sched-time">7:30 PM</div>
-            <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
+        <div class="card-body">
+          <div class="sched">
+            <div class="sched-row">
+              <div class="sched-time">4:00 PM</div>
+              <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George<br><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-time">5:00 PM</div>
+              <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-time">7:30 PM</div>
+              <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -291,30 +128,34 @@
     <section id="section-golf" class="section">
       <div class="card">
         <h2>Quick Notes</h2>
-        <p class="body-text">Everyone meet at 7 / 7:15ish in front of the townhouses to head over to golf.</p>
+        <div class="card-body"><p class="body-text">Everyone meet at 7 / 7:15ish in front of the townhouses to head over to golf.</p></div>
       </div>
       <div class="card">
         <h2>Golf</h2>
-        <div class="event-meta">
-          <div><span class="label">When</span><span>Friday, October 2 · 7:45 AM</span></div>
-          <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845<br><a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">topoftheworldgolfresort.com →</a></span></div>
-          <div><span class="label">Format</span><span>3 foursomes · Bramble<br>Teams TBD</span></div>
+        <div class="card-body">
+          <div class="event-meta">
+            <div><span class="label">When</span><span>Friday, October 2 · 7:45 AM</span></div>
+            <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845<br><a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">topoftheworldgolfresort.com →</a></span></div>
+            <div><span class="label">Format</span><span>3 foursomes · Bramble<br>Teams TBD</span></div>
+          </div>
         </div>
       </div>
       <div class="card">
         <h2>The Field (11)</h2>
-        <div class="players-grid">
-          <div class="player-chip">Mac</div>
-          <div class="player-chip">RJ</div>
-          <div class="player-chip">Joe</div>
-          <div class="player-chip">Kyle</div>
-          <div class="player-chip">Ryan</div>
-          <div class="player-chip">Keith</div>
-          <div class="player-chip">Dfitz</div>
-          <div class="player-chip">Cresta</div>
-          <div class="player-chip">Cree</div>
-          <div class="player-chip">Steve</div>
-          <div class="player-chip">OB</div>
+        <div class="card-body">
+          <div class="players-grid">
+            <div class="player-chip">Mac</div>
+            <div class="player-chip">RJ</div>
+            <div class="player-chip">Joe</div>
+            <div class="player-chip">Kyle</div>
+            <div class="player-chip">Ryan</div>
+            <div class="player-chip">Keith</div>
+            <div class="player-chip">Dfitz</div>
+            <div class="player-chip">Cresta</div>
+            <div class="player-chip">Cree</div>
+            <div class="player-chip">Steve</div>
+            <div class="player-chip">OB</div>
+          </div>
         </div>
       </div>
     </section>
@@ -322,25 +163,27 @@
     <section id="section-wedding" class="section active">
       <div class="card">
         <h2>Friday, October 2</h2>
-        <div class="event-meta" style="margin-bottom:16px;">
-          <div><span class="label">Venue</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
-        </div>
-        <div class="sched">
-          <div class="sched-row">
-            <div class="sched-time">7 / 7:15 AM</div>
-            <div class="sched-what">Golf at Top of the World</div>
+        <div class="card-body">
+          <div class="event-meta" style="margin-bottom:16px;">
+            <div><span class="label">Venue</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
           </div>
-          <div class="sched-row">
-            <div class="sched-time">11:45 AM</div>
-            <div class="sched-what">Meet in my room for getting ready and pics</div>
-          </div>
-          <div class="sched-row">
-            <div class="sched-time">12:00–4:00 PM</div>
-            <div class="sched-what">Hang out until the wedding</div>
-          </div>
-          <div class="sched-row">
-            <div class="sched-time">4:30 PM</div>
-            <div class="sched-what">Wedding starts</div>
+          <div class="sched">
+            <div class="sched-row">
+              <div class="sched-time">7 / 7:15 AM</div>
+              <div class="sched-what">Golf at Top of the World</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-time">11:45 AM</div>
+              <div class="sched-what">Meet in my room for getting ready and pics</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-time">12:00–4:00 PM</div>
+              <div class="sched-what">Hang out until the wedding</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-time">4:30 PM</div>
+              <div class="sched-what">Wedding starts</div>
+            </div>
           </div>
         </div>
       </div>
@@ -350,7 +193,7 @@
   <nav class="bottom-nav">
     <button class="nav-item" data-section="rehearsal" onclick="showSection('rehearsal')">
       <span class="nav-icon">🍽️</span>
-      <span>Rehearsal Dinner</span>
+      <span>Rehearsal</span>
     </button>
     <button class="nav-item" data-section="golf" onclick="showSection('golf')">
       <span class="nav-icon">⛳</span>
@@ -358,21 +201,19 @@
     </button>
     <button class="nav-item active" data-section="wedding" onclick="showSection('wedding')">
       <span class="nav-icon">💍</span>
-      <span>Wedding Day</span>
+      <span>Wedding</span>
     </button>
   </nav>
 
   <script>
     const REH_DATE = new Date("2026-10-01T16:00:00-04:00");
     const WED_DATE = new Date("2026-10-02T16:30:00-04:00");
-
     function showSection(name) {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
       document.getElementById("section-" + name).classList.add("active");
       document.querySelector('.nav-item[data-section="' + name + '"]').classList.add("active");
     }
-
     function parts(target) {
       let diff = target - new Date();
       if (diff < 0) return [0, 0];
@@ -380,7 +221,6 @@
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       return [days, hours];
     }
-
     function updateCountdown() {
       const [rd, rh] = parts(REH_DATE);
       const [wd, wh] = parts(WED_DATE);
@@ -389,7 +229,6 @@
       document.getElementById("wed-days").textContent = wd;
       document.getElementById("wed-hours").textContent = wh;
     }
-
     updateCountdown();
     setInterval(updateCountdown, 60000);
   </script>
