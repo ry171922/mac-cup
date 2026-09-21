@@ -46,19 +46,31 @@
     .cd-box .num { display: block; font-family: Georgia, serif; font-size: 1.55rem; line-height: 1; }
     .cd-box .label { display: block; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; margin-top: 3px; }
     .header-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-top: 14px;
+      margin-top: 16px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .header-links a {
+      display: block;
+      background: var(--maroon);
       color: #F4EFE6;
-      border: 1px solid rgba(244,239,230,0.35);
-      padding: 6px 10px;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      font-weight: 600;
+      border: none;
+      padding: 10px 8px 9px;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .header-links a span {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      opacity: 0.88;
+      margin-top: 3px;
     }
     .container { max-width: 480px; margin: -6px auto 0; padding: 0 14px 24px; }
     .section { display: none; }
@@ -111,9 +123,9 @@
       </div>
       <div class="header-links">
         <a href="https://www.zola.com/wedding/jordynandryanoctober2" target="_blank" rel="noopener">Wedding website</a>
-        <a href="https://www.erlowest.com/" target="_blank" rel="noopener">Erlowest</a>
-        <a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">The Boathouse</a>
-        <a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">Top of the World</a>
+        <a href="https://www.erlowest.com/" target="_blank" rel="noopener">Erlowest<span>3178 Lake Shore Dr, Lake George</span></a>
+        <a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">The Boathouse<span>3210 Lake Shore Dr, Lake George</span></a>
+        <a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">Top of the World<span>441 Lockhart Mountain Rd, Lake George</span></a>
       </div>
     </div>
   </header>
@@ -130,15 +142,15 @@
           <div class="sched">
             <div class="sched-row">
               <div class="sched-time">4:00 PM</div>
-              <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George</div>
+              <div class="sched-what">Walk through at The Inn at Erlowest</div>
             </div>
             <div class="sched-row">
               <div class="sched-time">5:00 PM</div>
-              <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
+              <div class="sched-what">Dinner at The Boathouse</div>
             </div>
             <div class="sched-row">
               <div class="sched-time">7:30 PM</div>
-              <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
+              <div class="sched-what">Welcome party for all other guests at The Boathouse</div>
             </div>
           </div>
         </div>
@@ -155,7 +167,7 @@
         <div class="card-body">
           <div class="event-meta">
             <div><span class="label">When</span><span>Friday, October 2 · 7:45 AM</span></div>
-            <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845</span></div>
+            <div><span class="label">Where</span><span>Top of the World Golf Course</span></div>
             <div><span class="label">Format</span><span>2 foursomes and 1 threesome · Bramble<br>Teams TBD</span></div>
           </div>
         </div>
@@ -185,7 +197,7 @@
         <h2>Friday, October 2</h2>
         <div class="card-body">
           <div class="event-meta" style="margin-bottom:16px;">
-            <div><span class="label">Venue</span><span>The Inn at Erlowest<br>3178 Lake Shore Drive<br>Lake George, NY 12845</span></div>
+            <div><span class="label">Venue</span><span>The Inn at Erlowest</span></div>
           </div>
           <div class="sched">
             <div class="sched-row">
