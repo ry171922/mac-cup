@@ -45,6 +45,21 @@
     .countdown { display: flex; justify-content: center; gap: 8px; }
     .cd-box .num { display: block; font-family: Georgia, serif; font-size: 1.55rem; line-height: 1; }
     .cd-box .label { display: block; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; margin-top: 3px; }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .header-links a {
+      color: #F4EFE6;
+      border: 1px solid rgba(244,239,230,0.35);
+      padding: 6px 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
     .container { max-width: 480px; margin: -6px auto 0; padding: 0 14px 24px; }
     .section { display: none; }
     .section.active { display: block; }
@@ -63,8 +78,7 @@
     .sched-time { min-width: 88px; font-size: 0.78rem; font-weight: 700; color: #fff; background: var(--green); padding: 6px 8px; text-align: center; align-self: flex-start; line-height: 1.25; }
     .sched-what { font-size: 0.93rem; padding-top: 4px; }
     .players-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .player-chip { background: var(--green); color: #F4EFE6; text-align: center; padding: 11px 8px; font-weight: 600; font-size: 0.88rem; }
-    .player-chip:nth-child(3n) { background: var(--maroon); }
+    .player-chip { background: var(--maroon); color: #F4EFE6; text-align: center; padding: 11px 8px; font-weight: 600; font-size: 0.88rem; }
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--green); display: flex; z-index: 100; padding: 0 0 env(safe-area-inset-bottom); }
     .nav-item { flex: 1; background: none; border: none; color: rgba(244,239,230,0.62); padding: 12px 4px 10px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; }
     .nav-item .nav-icon { display: block; font-size: 1.15rem; margin-bottom: 3px; }
@@ -95,6 +109,12 @@
           </div>
         </div>
       </div>
+      <div class="header-links">
+        <a href="https://www.zola.com/wedding/jordynandryanoctober2" target="_blank" rel="noopener">Wedding website</a>
+        <a href="https://www.erlowest.com/" target="_blank" rel="noopener">Erlowest</a>
+        <a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">The Boathouse</a>
+        <a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">Top of the World</a>
+      </div>
     </div>
   </header>
 
@@ -110,15 +130,15 @@
           <div class="sched">
             <div class="sched-row">
               <div class="sched-time">4:00 PM</div>
-              <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George<br><a href="https://www.erlowest.com/" target="_blank" rel="noopener">erlowest.com →</a></div>
+              <div class="sched-what">Walk through at The Inn at Erlowest<br>3178 Lake Shore Drive, Lake George</div>
             </div>
             <div class="sched-row">
               <div class="sched-time">5:00 PM</div>
-              <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
+              <div class="sched-what">Dinner at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
             </div>
             <div class="sched-row">
               <div class="sched-time">7:30 PM</div>
-              <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George<br><a href="https://lakegeorgeboathouse.com/" target="_blank" rel="noopener">lakegeorgeboathouse.com →</a></div>
+              <div class="sched-what">Welcome party for all other guests at The Boathouse<br>3210 Lake Shore Drive, Lake George</div>
             </div>
           </div>
         </div>
@@ -135,8 +155,8 @@
         <div class="card-body">
           <div class="event-meta">
             <div><span class="label">When</span><span>Friday, October 2 · 7:45 AM</span></div>
-            <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845<br><a href="https://topoftheworldgolfresort.com/" target="_blank" rel="noopener">topoftheworldgolfresort.com →</a></span></div>
-            <div><span class="label">Format</span><span>3 foursomes · Bramble<br>Teams TBD</span></div>
+            <div><span class="label">Where</span><span>Top of the World Golf Course<br>441 Lockhart Mountain Road<br>Lake George, NY 12845</span></div>
+            <div><span class="label">Format</span><span>2 foursomes and 1 threesome · Bramble<br>Teams TBD</span></div>
           </div>
         </div>
       </div>
@@ -178,7 +198,7 @@
             </div>
             <div class="sched-row">
               <div class="sched-time">12:00–4:00 PM</div>
-              <div class="sched-what">Hang out until the wedding</div>
+              <div class="sched-what">We’ll be taking pictures and hanging out at the Erlo West</div>
             </div>
             <div class="sched-row">
               <div class="sched-time">4:30 PM</div>
